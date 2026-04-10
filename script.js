@@ -3,7 +3,6 @@
 // ===================================
 
 document.addEventListener('DOMContentLoaded', () => {
-    // Initialize all components
     initNavbar();
     initMobileNav();
     initScrollAnimations();
@@ -16,19 +15,16 @@ document.addEventListener('DOMContentLoaded', () => {
 // ===================================
 function initNavbar() {
     const navbar = document.getElementById('navbar');
-    let lastScroll = 0;
+    if (!navbar) return;
 
     window.addEventListener('scroll', () => {
         const currentScroll = window.pageYOffset;
 
-        // Add scrolled class when page is scrolled
         if (currentScroll > 50) {
             navbar.classList.add('scrolled');
         } else {
             navbar.classList.remove('scrolled');
         }
-
-        lastScroll = currentScroll;
     });
 }
 
@@ -47,7 +43,6 @@ function initMobileNav() {
             navToggle.classList.toggle('active');
         });
 
-        // Close menu when clicking a link
         document.querySelectorAll('.nav-links a').forEach(link => {
             link.addEventListener('click', () => {
                 navLinks.classList.remove('active');
@@ -75,7 +70,6 @@ function initScrollAnimations() {
         });
     }, observerOptions);
 
-    // Add fade-in class to elements that should animate
     const animatedElements = document.querySelectorAll(
         '.feature-card, .arch-layer, .timeline-item, .flow-step, .section-header'
     );
@@ -102,16 +96,14 @@ function initParticles() {
 
 function createParticle(container) {
     const particle = document.createElement('div');
-    
-    // Random properties
+
     const size = Math.random() * 3 + 1;
     const x = Math.random() * 100;
     const y = Math.random() * 100;
     const duration = Math.random() * 20 + 20;
     const delay = Math.random() * 20;
     const opacity = Math.random() * 0.5 + 0.1;
-    
-    // Apply styles
+
     particle.style.cssText = `
         position: absolute;
         width: ${size}px;
@@ -123,11 +115,11 @@ function createParticle(container) {
         animation: float ${duration}s ease-in-out ${delay}s infinite;
         pointer-events: none;
     `;
-    
+
     container.appendChild(particle);
 }
 
-// Add floating animation via CSS injection
+// Floating animation
 const style = document.createElement('style');
 style.textContent = `
     @keyframes float {
@@ -158,33 +150,48 @@ function initWaitlistForm() {
     const form = document.getElementById('waitlistForm');
     const emailInput = document.getElementById('emailInput');
 
-    if (form) {
-        form.addEventListener('submit', async (e) => {
-            e.preventDefault();
-            
-            const email = emailInput.value.trim();
-            const button = form.querySelector('button');
-            const originalText = button.innerHTML;
+    if (!form || !emailInput) return;
 
-            // Validate email
-            if (!isValidEmail(email)) {
-                showNotification('Please enter a valid email address', 'error');
-                return;
+    form.addEventListener('submit', async (e) => {
+        e.preventDefault();
+
+        const email = emailInput.value.trim();
+        const button = form.querySelector('button');
+        const originalText = button.innerHTML;
+
+        if (!isValidEmail(email)) {
+            showNotification('Please enter a valid email address', 'error');
+            return;
+        }
+
+        if (!form.action || !form.method) {
+            showNotification('Waitlist form is not configured yet.', 'error');
+            return;
+        }
+
+        button.innerHTML = `
+            <svg class="spin" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/>
+            </svg>
+            <span>Joining...</span>
+        `;
+        button.disabled = true;
+
+        try {
+            const formData = new FormData(form);
+
+            const response = await fetch(form.action, {
+                method: form.method,
+                body: formData,
+                headers: {
+                    Accept: 'application/json'
+                }
+            });
+
+            if (!response.ok) {
+                throw new Error('Failed to join waitlist. Please try again.');
             }
 
-            // Show loading state
-            button.innerHTML = `
-                <svg class="spin" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/>
-                </svg>
-                <span>Joining...</span>
-            `;
-            button.disabled = true;
-
-            // Simulate API call (replace with actual API endpoint)
-            await new Promise(resolve => setTimeout(resolve, 1500));
-
-            // Success state
             button.innerHTML = `
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                     <path d="M20 6L9 17l-5-5"/>
@@ -192,18 +199,23 @@ function initWaitlistForm() {
                 <span>You're on the list!</span>
             `;
             button.style.background = 'linear-gradient(135deg, #10b981, #059669)';
-            
-            showNotification('Welcome to NyxLabs! We\'ll be in touch soon.', 'success');
-            
-            // Reset after delay
+
+            showNotification('Welcome to NyxLabs! Your signup has been received.', 'success');
+
             setTimeout(() => {
                 button.innerHTML = originalText;
                 button.disabled = false;
                 button.style.background = '';
                 emailInput.value = '';
             }, 3000);
-        });
-    }
+        } catch (error) {
+            button.innerHTML = originalText;
+            button.disabled = false;
+            button.style.background = '';
+
+            showNotification(error.message || 'Failed to join waitlist. Please try again.', 'error');
+        }
+    });
 }
 
 function isValidEmail(email) {
@@ -212,14 +224,12 @@ function isValidEmail(email) {
 }
 
 function showNotification(message, type = 'info') {
-    // Remove existing notifications
     const existing = document.querySelector('.notification');
     if (existing) existing.remove();
 
-    // Create notification element
     const notification = document.createElement('div');
     notification.className = `notification notification-${type}`;
-    
+
     const colors = {
         success: '#10b981',
         error: '#ef4444',
@@ -239,12 +249,12 @@ function showNotification(message, type = 'info') {
         z-index: 10000;
         animation: slideIn 0.3s ease-out;
         box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+        max-width: 320px;
     `;
-    
+
     notification.textContent = message;
     document.body.appendChild(notification);
 
-    // Add animation styles
     const animStyle = document.createElement('style');
     animStyle.textContent = `
         @keyframes slideIn {
@@ -277,7 +287,6 @@ function showNotification(message, type = 'info') {
     `;
     document.head.appendChild(animStyle);
 
-    // Remove after delay
     setTimeout(() => {
         notification.style.animation = 'slideOut 0.3s ease-in forwards';
         setTimeout(() => notification.remove(), 300);
@@ -289,9 +298,10 @@ function showNotification(message, type = 'info') {
 // ===================================
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
-        e.preventDefault();
         const target = document.querySelector(this.getAttribute('href'));
         if (target) {
+            e.preventDefault();
+
             const headerOffset = 80;
             const elementPosition = target.getBoundingClientRect().top;
             const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
