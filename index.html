@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <!-- Navigation -->
     <nav class="navbar" id="navbar">
         <div class="nav-container">
             <a href="#" class="nav-logo" aria-label="NyxLabs home">
@@ -34,6 +35,7 @@
         </div>
     </nav>
 
+    <!-- Hero Section -->
     <section class="hero" id="hero">
         <div class="hero-bg">
             <div class="hero-grid"></div>
@@ -50,8 +52,8 @@
                 <span class="gradient-text">Web3 Infrastructure</span>
             </h1>
             <p class="hero-description">
-                Asset-agnostic privacy layer for the decentralized future.
-                Protect your transactions with zero-knowledge proofs, stealth addresses,
+                Asset-agnostic privacy layer for the decentralized future. 
+                Protect your transactions with zero-knowledge proofs, stealth addresses, 
                 and a decentralized relayer network.
             </p>
             <div class="hero-actions">
@@ -95,18 +97,19 @@
             <div class="visual-ring ring-2"></div>
             <div class="visual-ring ring-3"></div>
             <div class="visual-core">
-                <img src="logo.png" alt="NyxLabs Logo">
+                <img src="logo.png" alt="NyxLabs Logo" class="hero-logo">
             </div>
         </div>
     </section>
 
+    <!-- Features Section -->
     <section class="features" id="features">
         <div class="container">
             <div class="section-header">
                 <span class="section-tag">Core Features</span>
                 <h2 class="section-title">Complete Privacy Stack</h2>
                 <p class="section-description">
-                    NyxLabs provides a comprehensive privacy solution that protects
+                    NyxLabs provides a comprehensive privacy solution that protects 
                     every aspect of your blockchain transactions.
                 </p>
             </div>
@@ -120,7 +123,7 @@
                     </div>
                     <h3 class="feature-title">Zero-Knowledge Proofs</h3>
                     <p class="feature-description">
-                        Prove transaction validity without revealing sender, receiver, or amount.
+                        Prove transaction validity without revealing sender, receiver, or amount. 
                         Built on Circom with Groth16/PLONK verification.
                     </p>
                     <div class="feature-tags">
@@ -139,7 +142,7 @@
                     </div>
                     <h3 class="feature-title">Stealth Addresses</h3>
                     <p class="feature-description">
-                        One-time addresses for every transaction. Impossible to link
+                        One-time addresses for every transaction. Impossible to link 
                         multiple payments to the same recipient.
                     </p>
                 </div>
@@ -153,7 +156,7 @@
                     </div>
                     <h3 class="feature-title">Relayer Network</h3>
                     <p class="feature-description">
-                        Decentralized relayers submit transactions on your behalf,
+                        Decentralized relayers submit transactions on your behalf, 
                         obscuring IP addresses and preventing metadata correlation.
                     </p>
                 </div>
@@ -168,7 +171,7 @@
                     </div>
                     <h3 class="feature-title">Privacy SDK</h3>
                     <p class="feature-description">
-                        TypeScript and Rust SDK with WebAssembly support for
+                        TypeScript and Rust SDK with WebAssembly support for 
                         client-side proof generation and seamless integration.
                     </p>
                 </div>
@@ -180,7 +183,7 @@
                     </div>
                     <h3 class="feature-title">Multi-Chain</h3>
                     <p class="feature-description">
-                        Deploy on Ethereum, Polygon, Arbitrum, and Solana.
+                        Deploy on Ethereum, Polygon, Arbitrum, and Solana. 
                         Cross-chain privacy routing coming soon.
                     </p>
                 </div>
@@ -194,7 +197,7 @@
                     </div>
                     <h3 class="feature-title">Optional Compliance</h3>
                     <p class="feature-description">
-                        View keys and proof-of-funds generation for institutions.
+                        View keys and proof-of-funds generation for institutions. 
                         Privacy by default, disclosure by choice.
                     </p>
                 </div>
@@ -202,6 +205,7 @@
         </div>
     </section>
 
+    <!-- Architecture Section -->
     <section class="architecture" id="architecture">
         <div class="container">
             <div class="section-header">
@@ -266,6 +270,7 @@
         </div>
     </section>
 
+    <!-- How It Works Section -->
     <section class="how-it-works" id="how-it-works">
         <div class="container">
             <div class="section-header">
@@ -308,6 +313,7 @@
         </div>
     </section>
 
+    <!-- Roadmap Section -->
     <section class="roadmap" id="roadmap">
         <div class="container">
             <div class="section-header">
@@ -375,6 +381,7 @@
         </div>
     </section>
 
+    <!-- CTA Section -->
     <section class="cta-section" id="waitlist">
         <div class="container">
             <div class="cta-content">
@@ -383,14 +390,9 @@
                     Join our waitlist to get early access to NyxLabs SDK 
                     and be among the first to build with true blockchain privacy.
                 </p>
-                <form
-                    class="waitlist-form"
-                    id="waitlistForm"
-                    action="https://formspree.io/f/YOUR_FORMSPREE_ID"
-                    method="POST"
-                >
+                <form class="waitlist-form" id="waitlistForm">
                     <div class="form-group">
-                        <input type="email" name="email" placeholder="Enter your email" required id="emailInput">
+                        <input type="email" placeholder="Enter your email" required id="emailInput" name="email">
                         <button type="submit" class="btn btn-primary">
                             <span>Join Waitlist</span>
                             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -404,11 +406,12 @@
         </div>
     </section>
 
+    <!-- Footer -->
     <footer class="footer">
         <div class="container">
             <div class="footer-content">
                 <div class="footer-brand">
-                    <a href="#" class="nav-logo" aria-label="NyxLabs home">
+                    <a href="#" class="nav-logo">
                         <img src="logo.png" alt="NyxLabs Logo" class="brand-logo">
                     </a>
                     <p>Privacy-first infrastructure for Web3.</p>
@@ -422,8 +425,8 @@
                     </div>
                     <div class="footer-col">
                         <h5>Resources</h5>
-                        <a href="#">Whitepaper</a>
                         <a href="https://github.com/farouk-nyx" target="_blank" rel="noopener noreferrer">GitHub</a>
+                        <a href="#" target="_blank" rel="noopener noreferrer">Whitepaper</a>
                     </div>
                     <div class="footer-col">
                         <h5>Community</h5>
