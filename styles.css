@@ -1,75 +1,148 @@
-.nav-logo {
-    display: inline-flex;
-    align-items: center;
-    gap: 10px;
-    text-decoration: none;
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
 }
 
-.brand-logo {
-    display: block;
-    height: 42px;
-    width: auto;
-    object-fit: contain;
-    flex-shrink: 0;
+body {
+  background: #0a0a0f;
+  color: #ffffff;
+  line-height: 1.6;
 }
 
-.visual-core {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    overflow: hidden;
+/* Navbar */
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 60px;
 }
 
-.visual-core img {
-    width: 140px;
-    height: auto;
-    object-fit: contain;
-    display: block;
+nav img {
+  height: 40px;
 }
 
-.hero-socials {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 14px;
-    margin-top: 24px;
+nav ul {
+  display: flex;
+  list-style: none;
+  gap: 30px;
 }
 
-.hero-socials a {
-    color: #d1d5db;
-    text-decoration: none;
-    border: 1px solid rgba(255, 255, 255, 0.12);
-    padding: 10px 14px;
-    border-radius: 999px;
-    transition: all 0.2s ease;
-    font-weight: 500;
+nav a {
+  color: #ccc;
+  text-decoration: none;
+  font-size: 14px;
 }
 
-.hero-socials a:hover {
-    color: #ffffff;
-    border-color: rgba(255, 255, 255, 0.28);
-    background: rgba(255, 255, 255, 0.04);
+nav a:hover {
+  color: #fff;
 }
 
-.footer-brand .brand-logo {
-    height: 34px;
+/* Hero Section */
+.hero {
+  text-align: center;
+  padding: 100px 20px;
 }
 
+.hero h1 {
+  font-size: 48px;
+  font-weight: 700;
+}
+
+.hero h1 span {
+  color: #5b7cff;
+}
+
+.hero p {
+  margin-top: 20px;
+  color: #aaa;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Buttons */
+.buttons {
+  margin-top: 30px;
+}
+
+.btn {
+  padding: 12px 24px;
+  border-radius: 8px;
+  text-decoration: none;
+  margin: 10px;
+  display: inline-block;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, #5b7cff, #7b4cff);
+  color: white;
+}
+
+.btn-secondary {
+  border: 1px solid #444;
+  color: #ccc;
+}
+
+/* Features */
+.features {
+  margin-top: 80px;
+  display: flex;
+  justify-content: center;
+  gap: 60px;
+}
+
+.feature {
+  text-align: center;
+}
+
+.feature h3 {
+  margin-top: 10px;
+  font-size: 16px;
+}
+
+.feature p {
+  color: #888;
+  font-size: 14px;
+}
+
+/* Social Links */
+.socials {
+  margin-top: 40px;
+  text-align: center;
+}
+
+.socials a {
+  margin: 0 15px;
+  color: #888;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.socials a:hover {
+  color: #fff;
+}
+
+/* Logo Fix */
+.logo {
+  max-width: 160px;
+  display: block;
+}
+
+/* Mobile */
 @media (max-width: 768px) {
-    .brand-logo {
-        height: 34px;
-    }
+  nav {
+    padding: 20px;
+  }
 
-    .visual-core img {
-        width: 100px;
-    }
+  .hero h1 {
+    font-size: 32px;
+  }
 
-    .hero-socials {
-        justify-content: center;
-        gap: 10px;
-    }
-
-    .hero-socials a {
-        padding: 9px 12px;
-        font-size: 14px;
-    }
+  .features {
+    flex-direction: column;
+    gap: 30px;
+  }
 }
