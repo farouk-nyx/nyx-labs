@@ -1,0 +1,75 @@
+.nav-logo {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+}
+
+.brand-logo {
+    display: block;
+    height: 42px;
+    width: auto;
+    object-fit: contain;
+    flex-shrink: 0;
+}
+
+.visual-core {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.visual-core img {
+    width: 140px;
+    height: auto;
+    object-fit: contain;
+    display: block;
+}
+
+.hero-socials {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+    margin-top: 24px;
+}
+
+.hero-socials a {
+    color: #d1d5db;
+    text-decoration: none;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    padding: 10px 14px;
+    border-radius: 999px;
+    transition: all 0.2s ease;
+    font-weight: 500;
+}
+
+.hero-socials a:hover {
+    color: #ffffff;
+    border-color: rgba(255, 255, 255, 0.28);
+    background: rgba(255, 255, 255, 0.04);
+}
+
+.footer-brand .brand-logo {
+    height: 34px;
+}
+
+@media (max-width: 768px) {
+    .brand-logo {
+        height: 34px;
+    }
+
+    .visual-core img {
+        width: 100px;
+    }
+
+    .hero-socials {
+        justify-content: center;
+        gap: 10px;
+    }
+
+    .hero-socials a {
+        padding: 9px 12px;
+        font-size: 14px;
+    }
+}

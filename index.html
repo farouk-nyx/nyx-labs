@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="NyxLabs - Privacy-First Web3 Infrastructure. Asset-agnostic privacy layer for the decentralized future.">
+    <meta name="keywords" content="privacy, web3, blockchain, zero-knowledge, ZK proofs, stealth addresses, cryptocurrency">
+    <title>NyxLabs | Privacy-First Web3 Infrastructure</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="#" class="nav-logo" aria-label="NyxLabs home">
+                <img src="logo.png" alt="NyxLabs Logo" class="brand-logo">
+            </a>
+            <ul class="nav-links">
+                <li><a href="#features">Features</a></li>
+                <li><a href="#architecture">Architecture</a></li>
+                <li><a href="#roadmap">Roadmap</a></li>
+                <li><a href="https://github.com/farouk-nyx" target="_blank" rel="noopener noreferrer">GitHub</a></li>
+            </ul>
+            <div class="nav-actions">
+                <a href="#waitlist" class="btn btn-primary">Join Waitlist</a>
+            </div>
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <section class="hero" id="hero">
+        <div class="hero-bg">
+            <div class="hero-grid"></div>
+            <div class="hero-glow"></div>
+            <div class="hero-particles" id="particles"></div>
+        </div>
+        <div class="hero-content">
+            <div class="hero-badge">
+                <span class="badge-dot"></span>
+                Building the future of privacy
+            </div>
+            <h1 class="hero-title">
+                Privacy-First<br>
+                <span class="gradient-text">Web3 Infrastructure</span>
+            </h1>
+            <p class="hero-description">
+                Asset-agnostic privacy layer for the decentralized future.
+                Protect your transactions with zero-knowledge proofs, stealth addresses,
+                and a decentralized relayer network.
+            </p>
+            <div class="hero-actions">
+                <a href="#waitlist" class="btn btn-primary btn-large">
+                    <span>Join the Waitlist</span>
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M5 12h14M12 5l7 7-7 7"/>
+                    </svg>
+                </a>
+                <a href="#architecture" class="btn btn-secondary btn-large">
+                    <span>Explore Architecture</span>
+                </a>
+            </div>
+
+            <div class="hero-socials">
+                <a href="https://www.instagram.com/nyxlabs_tech" target="_blank" rel="noopener noreferrer">Instagram</a>
+                <a href="https://x.com/nyxlabs_tech" target="_blank" rel="noopener noreferrer">X</a>
+                <a href="https://discord.gg/EXXvmWe89p" target="_blank" rel="noopener noreferrer">Discord</a>
+                <a href="https://github.com/farouk-nyx" target="_blank" rel="noopener noreferrer">GitHub</a>
+            </div>
+
+            <div class="hero-stats">
+                <div class="stat">
+                    <span class="stat-value">6</span>
+                    <span class="stat-label">Privacy Layers</span>
+                </div>
+                <div class="stat-divider"></div>
+                <div class="stat">
+                    <span class="stat-value">ZK</span>
+                    <span class="stat-label">Proof System</span>
+                </div>
+                <div class="stat-divider"></div>
+                <div class="stat">
+                    <span class="stat-value">∞</span>
+                    <span class="stat-label">Asset Support</span>
+                </div>
+            </div>
+        </div>
+        <div class="hero-visual">
+            <div class="visual-ring ring-1"></div>
+            <div class="visual-ring ring-2"></div>
+            <div class="visual-ring ring-3"></div>
+            <div class="visual-core">
+                <img src="logo.png" alt="NyxLabs Logo">
+            </div>
+        </div>
+    </section>
+
+    <section class="features" id="features">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Core Features</span>
+                <h2 class="section-title">Complete Privacy Stack</h2>
+                <p class="section-description">
+                    NyxLabs provides a comprehensive privacy solution that protects
+                    every aspect of your blockchain transactions.
+                </p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card featured">
+                    <div class="feature-icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                            <path d="M9 12l2 2 4-4"/>
+                        </svg>
+                    </div>
+                    <h3 class="feature-title">Zero-Knowledge Proofs</h3>
+                    <p class="feature-description">
+                        Prove transaction validity without revealing sender, receiver, or amount.
+                        Built on Circom with Groth16/PLONK verification.
+                    </p>
+                    <div class="feature-tags">
+                        <span class="tag">Circom</span>
+                        <span class="tag">SnarkJS</span>
+                        <span class="tag">Groth16</span>
+                    </div>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <circle cx="12" cy="12" r="3"/>
+                            <path d="M12 1v6m0 6v10M1 12h6m6 0h10"/>
+                            <path d="M4.22 4.22l4.24 4.24m7.08 7.08l4.24 4.24M4.22 19.78l4.24-4.24m7.08-7.08l4.24-4.24"/>
+                        </svg>
+                    </div>
+                    <h3 class="feature-title">Stealth Addresses</h3>
+                    <p class="feature-description">
+                        One-time addresses for every transaction. Impossible to link
+                        multiple payments to the same recipient.
+                    </p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <rect x="2" y="3" width="20" height="14" rx="2"/>
+                            <path d="M8 21h8M12 17v4"/>
+                            <path d="M6 8h.01M9 8h.01"/>
+                        </svg>
+                    </div>
+                    <h3 class="feature-title">Relayer Network</h3>
+                    <p class="feature-description">
+                        Decentralized relayers submit transactions on your behalf,
+                        obscuring IP addresses and preventing metadata correlation.
+                    </p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                            <polyline points="14 2 14 8 20 8"/>
+                            <line x1="16" y1="13" x2="8" y2="13"/>
+                            <line x1="16" y1="17" x2="8" y2="17"/>
+                        </svg>
+                    </div>
+                    <h3 class="feature-title">Privacy SDK</h3>
+                    <p class="feature-description">
+                        TypeScript and Rust SDK with WebAssembly support for
+                        client-side proof generation and seamless integration.
+                    </p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+                        </svg>
+                    </div>
+                    <h3 class="feature-title">Multi-Chain</h3>
+                    <p class="feature-description">
+                        Deploy on Ethereum, Polygon, Arbitrum, and Solana.
+                        Cross-chain privacy routing coming soon.
+                    </p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/>
+                            <circle cx="9" cy="7" r="4"/>
+                            <path d="M22 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/>
+                        </svg>
+                    </div>
+                    <h3 class="feature-title">Optional Compliance</h3>
+                    <p class="feature-description">
+                        View keys and proof-of-funds generation for institutions.
+                        Privacy by default, disclosure by choice.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="architecture" id="architecture">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">System Design</span>
+                <h2 class="section-title">Multi-Layer Architecture</h2>
+                <p class="section-description">
+                    Each layer serves a critical function. If any layer is weak, privacy collapses.
+                </p>
+            </div>
+            <div class="architecture-visual">
+                <div class="arch-layers">
+                    <div class="arch-layer" data-layer="1">
+                        <div class="layer-number">01</div>
+                        <div class="layer-content">
+                            <h4>Cryptography</h4>
+                            <p>Elliptic curves, hash functions, commitments, nullifiers</p>
+                        </div>
+                        <div class="layer-role">Hides Truth</div>
+                    </div>
+                    <div class="arch-layer" data-layer="2">
+                        <div class="layer-number">02</div>
+                        <div class="layer-content">
+                            <h4>Smart Contracts</h4>
+                            <p>ZK verifiers, Merkle trees, deposit/withdraw logic</p>
+                        </div>
+                        <div class="layer-role">Enforces Rules</div>
+                    </div>
+                    <div class="arch-layer" data-layer="3">
+                        <div class="layer-number">03</div>
+                        <div class="layer-content">
+                            <h4>Relayer Network</h4>
+                            <p>Metadata protection, gas abstraction, IP obscuring</p>
+                        </div>
+                        <div class="layer-role">Hides Metadata</div>
+                    </div>
+                    <div class="arch-layer" data-layer="4">
+                        <div class="layer-number">04</div>
+                        <div class="layer-content">
+                            <h4>Wallet SDK</h4>
+                            <p>Proof generation, stealth addresses, privacy UX</p>
+                        </div>
+                        <div class="layer-role">Enables Adoption</div>
+                    </div>
+                    <div class="arch-layer" data-layer="5">
+                        <div class="layer-number">05</div>
+                        <div class="layer-content">
+                            <h4>Governance</h4>
+                            <p>DAO upgrades, time-locked changes, decentralization</p>
+                        </div>
+                        <div class="layer-role">Ensures Neutrality</div>
+                    </div>
+                    <div class="arch-layer" data-layer="6">
+                        <div class="layer-number">06</div>
+                        <div class="layer-content">
+                            <h4>Compliance</h4>
+                            <p>View keys, audit exports, optional disclosure</p>
+                        </div>
+                        <div class="layer-role">Ensures Survival</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="how-it-works" id="how-it-works">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Privacy Flow</span>
+                <h2 class="section-title">How NyxLabs Works</h2>
+            </div>
+            <div class="flow-container">
+                <div class="flow-step">
+                    <div class="flow-number">1</div>
+                    <div class="flow-content">
+                        <h4>Deposit</h4>
+                        <p>Create a commitment: <code>C = Hash(amount, secret, recipient)</code></p>
+                    </div>
+                </div>
+                <div class="flow-connector"></div>
+                <div class="flow-step">
+                    <div class="flow-number">2</div>
+                    <div class="flow-content">
+                        <h4>Generate Proof</h4>
+                        <p>Prove you know a valid commitment without revealing which one</p>
+                    </div>
+                </div>
+                <div class="flow-connector"></div>
+                <div class="flow-step">
+                    <div class="flow-number">3</div>
+                    <div class="flow-content">
+                        <h4>Submit via Relayer</h4>
+                        <p>Relayer submits transaction, hiding your IP and wallet</p>
+                    </div>
+                </div>
+                <div class="flow-connector"></div>
+                <div class="flow-step">
+                    <div class="flow-number">4</div>
+                    <div class="flow-content">
+                        <h4>Withdraw Privately</h4>
+                        <p>Receive funds at a stealth address with no on-chain link</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="roadmap" id="roadmap">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Timeline</span>
+                <h2 class="section-title">Development Roadmap</h2>
+                <p class="section-description">
+                    A 12-month journey from research to mainnet launch.
+                </p>
+            </div>
+            <div class="roadmap-timeline">
+                <div class="timeline-line"></div>
+                <div class="timeline-item" data-phase="1">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <span class="timeline-period">Months 0-3</span>
+                        <h4>Research & Foundation</h4>
+                        <ul>
+                            <li>Deep cryptography research</li>
+                            <li>Legal framework establishment</li>
+                            <li>Whitepaper v1</li>
+                            <li>Core team assembly</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="timeline-item" data-phase="2">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <span class="timeline-period">Months 4-6</span>
+                        <h4>MVP Development</h4>
+                        <ul>
+                            <li>Smart contract MVP</li>
+                            <li>ZK circuit prototype</li>
+                            <li>Internal testnet</li>
+                            <li>Wallet SDK alpha</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="timeline-item" data-phase="3">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <span class="timeline-period">Months 7-9</span>
+                        <h4>Security & Testing</h4>
+                        <ul>
+                            <li>External security audit</li>
+                            <li>Bug bounty program</li>
+                            <li>Wallet partnerships</li>
+                            <li>Closed beta launch</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="timeline-item" data-phase="4">
+                    <div class="timeline-marker active"></div>
+                    <div class="timeline-content">
+                        <span class="timeline-period">Months 10-12</span>
+                        <h4>Mainnet Launch</h4>
+                        <ul>
+                            <li>Production deployment</li>
+                            <li>Enterprise pilots</li>
+                            <li>Governance setup</li>
+                            <li>Series A fundraising</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-section" id="waitlist">
+        <div class="container">
+            <div class="cta-content">
+                <h2 class="cta-title">Be Part of the Privacy Revolution</h2>
+                <p class="cta-description">
+                    Join our waitlist to get early access to NyxLabs SDK 
+                    and be among the first to build with true blockchain privacy.
+                </p>
+                <form
+                    class="waitlist-form"
+                    id="waitlistForm"
+                    action="https://formspree.io/f/YOUR_FORMSPREE_ID"
+                    method="POST"
+                >
+                    <div class="form-group">
+                        <input type="email" name="email" placeholder="Enter your email" required id="emailInput">
+                        <button type="submit" class="btn btn-primary">
+                            <span>Join Waitlist</span>
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M5 12h14M12 5l7 7-7 7"/>
+                            </svg>
+                        </button>
+                    </div>
+                </form>
+                <p class="cta-note">No spam. Only important updates about NyxLabs development.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <a href="#" class="nav-logo" aria-label="NyxLabs home">
+                        <img src="logo.png" alt="NyxLabs Logo" class="brand-logo">
+                    </a>
+                    <p>Privacy-first infrastructure for Web3.</p>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-col">
+                        <h5>Product</h5>
+                        <a href="#features">Features</a>
+                        <a href="#architecture">Architecture</a>
+                        <a href="#roadmap">Roadmap</a>
+                    </div>
+                    <div class="footer-col">
+                        <h5>Resources</h5>
+                        <a href="#">Whitepaper</a>
+                        <a href="https://github.com/farouk-nyx" target="_blank" rel="noopener noreferrer">GitHub</a>
+                    </div>
+                    <div class="footer-col">
+                        <h5>Community</h5>
+                        <a href="https://discord.gg/EXXvmWe89p" target="_blank" rel="noopener noreferrer">Discord</a>
+                        <a href="https://x.com/nyxlabs_tech" target="_blank" rel="noopener noreferrer">X</a>
+                        <a href="https://www.instagram.com/nyxlabs_tech" target="_blank" rel="noopener noreferrer">Instagram</a>
+                        <a href="https://github.com/farouk-nyx" target="_blank" rel="noopener noreferrer">GitHub</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 NyxLabs. All rights reserved.</p>
+                <div class="footer-legal">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
