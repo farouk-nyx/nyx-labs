@@ -24,8 +24,7 @@ html {
 body {
     font-family: 'Inter', sans-serif;
     color: var(--text);
-    background:
-        linear-gradient(180deg, #020611 0%, #050915 100%);
+    background: linear-gradient(180deg, #020611 0%, #050915 100%);
     overflow-x: hidden;
     line-height: 1.6;
 }
@@ -122,12 +121,15 @@ ul {
     gap: 12px;
 }
 
-.logo-icon {
-    font-size: 26px;
-    font-weight: 700;
-    line-height: 1;
-    color: #8ec5ff;
-    text-shadow: 0 0 10px rgba(124, 184, 255, 0.22);
+.brand-logo {
+    height: 42px;
+    width: auto;
+    object-fit: contain;
+    filter: brightness(2.25) contrast(1.25) saturate(1.05);
+}
+
+.footer-brand-logo {
+    height: 38px;
 }
 
 .logo-text {
@@ -251,10 +253,9 @@ ul {
     opacity: 0.45;
 }
 
-/* softened and centered so left side stays clean */
 .hero-glow {
     position: absolute;
-    left: 54%;
+    left: 56%;
     bottom: 4%;
     transform: translateX(-50%);
     width: 420px;
@@ -287,7 +288,6 @@ ul {
     margin-bottom: 24px;
 }
 
-/* changed from green to cyan glow like the button */
 .badge-dot {
     width: 8px;
     height: 8px;
@@ -403,18 +403,18 @@ ul {
     display: flex;
     align-items: center;
     justify-content: center;
-    background: radial-gradient(circle, rgba(79,124,255,0.24), rgba(26,31,58,0.08));
+    background: radial-gradient(circle, rgba(79,124,255,0.22), rgba(26,31,58,0.07));
     backdrop-filter: blur(10px);
     box-shadow:
         inset 0 0 24px rgba(255,255,255,0.04),
-        0 0 30px rgba(91, 124, 255, 0.12);
+        0 0 30px rgba(91, 124, 255, 0.10);
 }
 
-.hero-symbol {
-    font-size: 56px;
-    line-height: 1;
-    color: #eaf3ff;
-    text-shadow: 0 0 18px rgba(124, 184, 255, 0.38);
+.hero-logo {
+    width: 76px;
+    height: auto;
+    object-fit: contain;
+    filter: brightness(2.2) contrast(1.2) saturate(1.05);
 }
 
 /* =========================
@@ -920,8 +920,8 @@ ul {
         display: flex;
     }
 
-    .logo-icon {
-        font-size: 30px;
+    .brand-logo {
+        height: 46px;
     }
 
     .logo-text {
