@@ -157,7 +157,7 @@ code {
     left: 0;
     right: 0;
     z-index: 1000;
-    padding: 0.7rem 0;
+    padding: 0.35rem 0;
     background: rgba(7, 7, 12, 0.84);
     backdrop-filter: blur(18px);
     border-bottom: 1px solid rgba(255, 255, 255, 0.04);
@@ -170,7 +170,7 @@ code {
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 20px;
-    min-height: 76px;
+    min-height: 108px;
 }
 
 .nav-logo {
@@ -181,15 +181,15 @@ code {
 }
 
 .brand-logo {
-    height: 74px;
+    height: 104px;
     width: auto;
     object-fit: contain;
     display: block;
-    filter: drop-shadow(0 0 12px rgba(139, 92, 246, 0.3));
+    filter: drop-shadow(0 0 14px rgba(139, 92, 246, 0.34));
 }
 
 .footer-brand-logo {
-    height: 56px;
+    height: 72px;
 }
 
 .nav-links {
@@ -981,11 +981,11 @@ section {
 /* Mobile */
 @media (max-width: 900px) {
     .nav-container {
-        min-height: 88px;
+        min-height: 118px;
     }
 
     .brand-logo {
-        height: 88px;
+        height: 120px;
     }
 
     .nav-links,
@@ -1098,26 +1098,3 @@ section {
         text-align: center;
     }
 }
-
-/* Entrance animation */
-@keyframes fadeInUp {
-    from {
-        opacity: 0;
-        transform: translateY(28px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-.hero-content > * {
-    animation: fadeInUp 0.8s ease-out both;
-}
-
-.hero-badge { animation-delay: 0.1s; }
-.hero-title { animation-delay: 0.2s; }
-.hero-description { animation-delay: 0.3s; }
-.hero-actions { animation-delay: 0.4s; }
-.hero-socials { animation-delay: 0.45s; }
-.hero-stats { animation-delay: 0.5s; }
