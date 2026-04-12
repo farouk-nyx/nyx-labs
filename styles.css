@@ -1,3 +1,5 @@
+
+
 /* ===================================
    NyxLabs Landing Page Styles
    =================================== */
@@ -16,7 +18,7 @@
 
     --color-accent-primary: #8b5cf6;
     --color-accent-secondary: #06b6d4;
-    --color-accent-gradient: linear-gradient(135deg, #8b5cf6 0%, #06b6d4 100%);
+    --color-accent-gradient: linear-gradient(135deg, #8b5cf6 0%, #6366f1 45%, #06b6d4 100%);
     --color-accent-glow: rgba(139, 92, 246, 0.35);
 
     --color-success: #10b981;
@@ -192,18 +194,22 @@ code {
     justify-content: space-between;
     max-width: 1200px;
     margin: 0 auto;
-    padding: 0 var(--spacing-lg);
+    padding: 0 20px;
 }
 
 .nav-logo {
     display: flex;
     align-items: center;
+    justify-content: flex-start;
+    flex-shrink: 0;
 }
 
 .brand-logo {
-    height: 36px;
+    height: 52px;
     width: auto;
     object-fit: contain;
+    display: block;
+    filter: drop-shadow(0 0 10px rgba(139, 92, 246, 0.22));
 }
 
 .footer-brand-logo {
@@ -410,6 +416,7 @@ code {
     width: 360px;
     height: 360px;
     display: none;
+    overflow: visible;
 }
 
 @media (min-width: 1200px) {
@@ -435,11 +442,65 @@ code {
     }
 }
 
+/* Ripple pulse layers */
+.hero-visual::before,
+.hero-visual::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    border-radius: 50%;
+    transform: translate(-50%, -50%) scale(1);
+    pointer-events: none;
+    z-index: 1;
+}
+
+.hero-visual::before {
+    width: 150px;
+    height: 150px;
+    border: 1px solid rgba(139, 92, 246, 0.22);
+    box-shadow: 0 0 30px rgba(139, 92, 246, 0.10);
+    animation: ripplePulse 2.8s ease-out infinite;
+}
+
+.hero-visual::after {
+    width: 150px;
+    height: 150px;
+    border: 1px solid rgba(6, 182, 212, 0.18);
+    box-shadow: 0 0 36px rgba(6, 182, 212, 0.08);
+    animation: ripplePulse 2.8s ease-out infinite 1.4s;
+}
+
+@keyframes ripplePulse {
+    0% {
+        opacity: 0.75;
+        transform: translate(-50%, -50%) scale(0.9);
+    }
+    70% {
+        opacity: 0.18;
+        transform: translate(-50%, -50%) scale(2.15);
+    }
+    100% {
+        opacity: 0;
+        transform: translate(-50%, -50%) scale(2.45);
+    }
+}
+
 .visual-ring {
     position: absolute;
     border-radius: 50%;
     border: 1px solid rgba(139, 92, 246, 0.18);
-    animation: rotate 30s linear infinite;
+    animation: rotate 30s linear infinite, ringBreath 3.2s ease-in-out infinite;
+    z-index: 2;
+}
+
+@keyframes ringBreath {
+    0%, 100% {
+        opacity: 0.45;
+    }
+    50% {
+        opacity: 0.9;
+    }
 }
 
 .ring-1 {
@@ -449,14 +510,14 @@ code {
 .ring-2 {
     inset: 30px;
     border-color: rgba(6, 182, 212, 0.18);
-    animation-direction: reverse;
-    animation-duration: 24s;
+    animation-direction: reverse, normal;
+    animation-duration: 24s, 3.2s;
 }
 
 .ring-3 {
     inset: 60px;
     border-color: rgba(139, 92, 246, 0.22);
-    animation-duration: 18s;
+    animation-duration: 18s, 3.2s;
 }
 
 @keyframes rotate {
@@ -471,26 +532,35 @@ code {
     width: 102px;
     height: 102px;
     transform: translate(-50%, -50%);
-    background: var(--color-accent-gradient);
+    background: radial-gradient(
+        circle at center,
+        rgba(99, 102, 241, 0.95) 0%,
+        rgba(6, 182, 212, 0.82) 62%,
+        rgba(0, 0, 0, 0) 100%
+    );
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-    box-shadow: var(--shadow-glow);
-    animation: glow-pulse 3s ease-in-out infinite;
+    box-shadow: 0 0 36px rgba(139, 92, 246, 0.35);
+    animation: glow-pulse 2.4s ease-in-out infinite;
     overflow: hidden;
+    z-index: 3;
 }
 
 .hero-logo,
 .visual-core img {
-    width: 52px;
-    height: auto;
+    width: 54px;
+    height: 54px;
     object-fit: contain;
+    filter:
+        drop-shadow(0 0 12px rgba(139, 92, 246, 0.35))
+        drop-shadow(0 0 18px rgba(6, 182, 212, 0.25));
 }
 
 @keyframes glow-pulse {
-    0%, 100% { box-shadow: 0 0 36px var(--color-accent-glow); }
-    50% { box-shadow: 0 0 56px var(--color-accent-glow), 0 0 78px rgba(6, 182, 212, 0.26); }
+    0%, 100% { box-shadow: 0 0 36px rgba(139, 92, 246, 0.35); }
+    50% { box-shadow: 0 0 56px rgba(139, 92, 246, 0.42), 0 0 78px rgba(6, 182, 212, 0.26); }
 }
 
 /* Sections */
@@ -1036,7 +1106,7 @@ section {
     }
 
     .brand-logo {
-        height: 32px;
+        height: 58px;
     }
 }
 
