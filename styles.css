@@ -1,5 +1,5 @@
 /* ===================================
-   NyxLabs Landing Page Styles
+   Orunyx Landing Page Styles
    Matched to current index.html
    =================================== */
 
@@ -74,7 +74,6 @@ img {
     display: block;
 }
 
-/* Container */
 .container {
     width: 100%;
     max-width: 1200px;
@@ -82,7 +81,6 @@ img {
     padding: 0 24px;
 }
 
-/* Typography */
 h1, h2, h3, h4, h5, h6 {
     font-weight: 700;
     line-height: 1.12;
@@ -148,9 +146,7 @@ code {
     font-size: 1rem;
 }
 
-/* =========================
-   NAVBAR
-========================= */
+/* Navbar */
 .navbar {
     position: fixed;
     top: 0;
@@ -170,7 +166,7 @@ code {
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 20px;
-    min-height: 108px;
+    min-height: 86px;
 }
 
 .nav-logo {
@@ -181,15 +177,15 @@ code {
 }
 
 .brand-logo {
-    height: 104px;
+    height: 72px;
     width: auto;
     object-fit: contain;
     display: block;
-    filter: drop-shadow(0 0 14px rgba(139, 92, 246, 0.34));
+    filter: drop-shadow(0 0 14px rgba(139, 92, 246, 0.32));
 }
 
 .footer-brand-logo {
-    height: 72px;
+    height: 58px;
 }
 
 .nav-links {
@@ -229,16 +225,14 @@ code {
     border-radius: 2px;
 }
 
-/* =========================
-   HERO
-========================= */
+/* Hero */
 .hero {
     position: relative;
     min-height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 8.5rem 24px 6rem;
+    padding: 8rem 24px 6rem;
     overflow: hidden;
 }
 
@@ -391,13 +385,12 @@ code {
     right: 8%;
     top: 50%;
     transform: translateY(-50%);
-    width: 360px;
-    height: 360px;
+    width: 380px;
+    height: 380px;
     display: none;
     overflow: visible;
 }
 
-/* Ripple effect */
 .hero-visual::before,
 .hero-visual::after {
     content: "";
@@ -411,16 +404,16 @@ code {
 }
 
 .hero-visual::before {
-    width: 150px;
-    height: 150px;
+    width: 170px;
+    height: 170px;
     border: 1px solid rgba(139, 92, 246, 0.22);
     box-shadow: 0 0 30px rgba(139, 92, 246, 0.10);
     animation: ripplePulse 2.8s ease-out infinite;
 }
 
 .hero-visual::after {
-    width: 150px;
-    height: 150px;
+    width: 170px;
+    height: 170px;
     border: 1px solid rgba(6, 182, 212, 0.18);
     box-shadow: 0 0 36px rgba(6, 182, 212, 0.08);
     animation: ripplePulse 2.8s ease-out infinite 1.4s;
@@ -480,33 +473,33 @@ code {
     position: absolute;
     top: 50%;
     left: 50%;
-    width: 102px;
-    height: 102px;
+    width: 132px;
+    height: 132px;
     transform: translate(-50%, -50%);
     background: radial-gradient(
         circle at center,
-        rgba(99, 102, 241, 0.95) 0%,
-        rgba(6, 182, 212, 0.82) 62%,
+        rgba(139, 92, 246, 0.2) 0%,
+        rgba(6, 182, 212, 0.1) 52%,
         rgba(0, 0, 0, 0) 100%
     );
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-    box-shadow: 0 0 36px rgba(139, 92, 246, 0.35);
+    box-shadow: 0 0 42px rgba(139, 92, 246, 0.32);
     animation: glowPulse 2.4s ease-in-out infinite;
-    overflow: hidden;
+    overflow: visible;
     z-index: 3;
 }
 
 .hero-logo,
 .visual-core img {
-    width: 54px;
-    height: 54px;
+    width: 118px;
+    height: 118px;
     object-fit: contain;
     filter:
-        drop-shadow(0 0 12px rgba(139, 92, 246, 0.35))
-        drop-shadow(0 0 18px rgba(6, 182, 212, 0.25));
+        drop-shadow(0 0 14px rgba(139, 92, 246, 0.45))
+        drop-shadow(0 0 22px rgba(6, 182, 212, 0.24));
 }
 
 @keyframes glowPulse {
@@ -981,11 +974,15 @@ section {
 /* Mobile */
 @media (max-width: 900px) {
     .nav-container {
-        min-height: 118px;
+        min-height: 92px;
     }
 
     .brand-logo {
-        height: 120px;
+        height: 78px;
+    }
+
+    .footer-brand-logo {
+        height: 58px;
     }
 
     .nav-links,
@@ -1023,7 +1020,7 @@ section {
     }
 
     .hero {
-        padding: 8rem 20px 5rem;
+        padding: 7.5rem 20px 5rem;
     }
 
     .hero-content {
@@ -1032,7 +1029,7 @@ section {
     }
 
     .hero-title {
-        font-size: clamp(3rem, 12vw, 4.8rem);
+        font-size: clamp(2.7rem, 11vw, 4.5rem);
         line-height: 0.98;
     }
 
